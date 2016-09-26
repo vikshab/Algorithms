@@ -32,33 +32,33 @@ Tree.prototype.traverseInOrder = function(callback) {
 
 Tree.prototype.traversePreOrder = function(callback) {
 	(function traverse(node) {
-		if(node){
-			callback(node);
+	  if(node){
+	    callback(node);
 
-  		if(node.left){
-    		traverse(node.left)
-    	}
+  	if(node.left){
+    	traverse(node.left)
+      }
 
-    	if(node.right){
-    		traverse(node.right)
-    	}
-  	}
+      if(node.right){
+        traverse(node.right)
+      }
+    }
   })(this.root)
 }
 
 Tree.prototype.traversePostOrder = function(callback) {
 	(function traverse(node) {
-		if(node){
-  		if(node.left){
-    		traverse(node.left)
-    	}
+    if(node){
+      if(node.left){
+        traverse(node.left)
+      }
 
-    	if(node.right){
-    		traverse(node.right)
-    	}
+      if(node.right){
+        traverse(node.right)
+      }
 
-     	callback(node);
-  	}
+      callback(node);
+     }
   })(this.root)
 }
 
